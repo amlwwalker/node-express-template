@@ -15,7 +15,7 @@ serve.get('/', function(req, res) {
 	res.sendStatus(200);
 });
 
-
+console.log("hello world");
 var adminChecker = function(req, res, next) {
 	if (req.query.admin == undefined) {
 		res.end(JSON.stringify({error: "you are not an admin"}))
@@ -59,7 +59,4 @@ serve.use(express.static('public'));
 //set the engine for templating to ejs
 serve.set('view engine', 'ejs');  
 
-
-serve.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+module.exports = serve;

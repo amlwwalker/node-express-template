@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var serve = require('../app');
+var config = require('../config');
+
+serve.set('port', config.http.port);
+
+var server = serve.listen(serve.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
